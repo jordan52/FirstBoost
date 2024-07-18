@@ -13,4 +13,6 @@ CMakeUserPresets.json
 FirstBoost
 build
 .vscode
+.idea
 *.a
+cmake-build-debug
