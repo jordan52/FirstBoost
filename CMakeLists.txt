@@ -28,6 +28,7 @@ add_executable(
 target_link_libraries(
     example_test
     GTest::gtest_main
+    CudaHelpers_lib
 )
 include(GoogleTest)
 gtest_discover_tests(example_test)
