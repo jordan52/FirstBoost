@@ -13,3 +13,4 @@ CMakeUserPresets.json
 FirstBoost
 build
 .vscode
+*.a
