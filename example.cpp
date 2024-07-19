@@ -16,11 +16,11 @@ int main()
   std::string line("Subject: hello");
   if (boost::regex_match(line, matches, pat))
     std::cout << matches[2] << std::endl;
-
+/*
   std::for_each(
       in(std::cin), in(), std::cout << (_1 * 3) << " ");
   std::cout << std::endl;
-
+*/
   int deviceCount = 0;
   cudaError_t error_id = cudaGetDeviceCount(&deviceCount);
 

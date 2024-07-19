@@ -9,7 +9,11 @@ TEST(HelloTest, BasicAssertions) {
   EXPECT_EQ(7 * 6, 42);
 }
 
-
 TEST(HelloTest, CudaHelperDeviceCount) {
   EXPECT_EQ(cudahelpers::deviceCount(5) , 25);
+  EXPECT_EQ(cudahelpers::theD(5) , 25);
+}
+
+TEST(HelloTest, CudaHelperTheD) {
+  EXPECT_EQ(cudahelpers::theD(5), 25);
 }

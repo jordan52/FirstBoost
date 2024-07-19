@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
-project(FirstBoost)
+project(FirstBoost LANGUAGES CUDA CXX)
 
 find_package(CUDAToolkit REQUIRED)
 find_package(Boost 1.85.0 REQUIRED COMPONENTS regex)
@@ -12,7 +12,10 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+# is it better to have these both in one line?
 include_directories(${Boost_INCLUDE_DIRS})
+include_directories(${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES})
+
 add_subdirectory(CudaHelpers_lib)
 add_executable(FirstBoost example.cpp)
 target_link_libraries(FirstBoost CudaHelpers_lib Boost::regex CUDA::cudart)
@@ -32,4 +35,3 @@ target_link_libraries(
 )
 include(GoogleTest)
 gtest_discover_tests(example_test)
-
